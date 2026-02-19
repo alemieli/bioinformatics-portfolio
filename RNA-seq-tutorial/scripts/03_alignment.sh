@@ -32,13 +32,13 @@ done
 # ============================================================================
 
 # Convert SAM to BAM (binary, compressed format)
-samtools view -S -b Sample_aligned.sam > Sample_aligned.bam
+samtools view -S -b ${sample}_aligned.sam > ${sample}_aligned.bam
 
 # Sort BAM file by genomic coordinates
-samtools sort Sample_aligned.bam -o Sample_sorted_aligned.bam
+samtools sort ${sample}_aligned.bam -o ${sample}_sorted_aligned.bam
 
 # Index sorted BAM file for fast access
-samtools index Sample_sorted_aligned.bam
+samtools index ${sample}_sorted_aligned.bam
 
 echo "Alignment complete. Output: Sample_sorted_aligned.bam"
 
